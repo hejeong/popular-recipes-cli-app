@@ -41,7 +41,7 @@ class PopularRecipes::CLI
     scraper = PopularRecipes::RecipeScraper.new
     new_attributes = scraper.scrape_list_page
     PopularRecipes::Recipe.create(new_attributes)
-    additional_attr = scraper.
+    additional_attr = scraper.scrape_recipe_page
     self.all.each do |recipe|
       recipe.add_attributes(additional_attr)
     end

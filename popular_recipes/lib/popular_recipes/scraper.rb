@@ -11,7 +11,7 @@ class PopularRecipes::RecipeScraper
     recipes = []
     list_element.each do |card|
       recipes << {
-        :name => card.css('h3 span').text,
+        :name => card.css('h3 span').text.gsub(/No\s[0-9]*:\s/, ""),
         :url => card.css('p a').attribute('href').value
       }
     end
@@ -19,7 +19,8 @@ class PopularRecipes::RecipeScraper
   end
 
   # return array of hashes
-  def scrape_receipe_page(url)
-
+  def scrape_recipe_page(url)
+    doc = get_page(url)
+    binding.pry
   end
 end
