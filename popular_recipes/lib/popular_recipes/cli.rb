@@ -41,8 +41,8 @@ class PopularRecipes::CLI
     scraper = PopularRecipes::RecipeScraper.new
     new_attributes = scraper.scrape_list_page
     PopularRecipes::Recipe.create(new_attributes)
-    additional_attr = scraper.scrape_recipe_page
-    self.all.each do |recipe|
+    PopularRecipes::Recipe.all.each do |recipe|
+      additional_attr = scraper.scrape_recipe_page("https://www.foodnetwork.com/recipes/ina-garten/asian-grilled-salmon-recipe-1944413")
       recipe.add_attributes(additional_attr)
     end
   end
@@ -55,8 +55,8 @@ class PopularRecipes::CLI
     case list_input
     when "1-10"
       puts "----------------------Recipes 1-10---------------------------"
-      puts "1. #{recipes[0]}"
-      puts "2. #{recipes[1]}"
+      puts "1. #{recipes[0].name}"
+      puts "2. #{recipes[1].name}"
       puts "3. Ina's Linguine with Shrimp Scampi"
       puts "-------------------------------------------------------------"
     when "11-20"
