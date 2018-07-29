@@ -1,5 +1,6 @@
 class PopularRecipes::CLI
   def call
+    create_recipes
     puts
     puts
     puts "Welcome to Top 50 Popular Recipes!"
@@ -36,10 +37,21 @@ class PopularRecipes::CLI
     puts "If you want to see another list, enter the range (1-10) (11-20) (21-30) (31-40) (41-50) To quit, type exit."
   end
 
+  def create_recipes
+    scraper = PopularRecipes::RecipeScraper.new
+    new_attributes = scraper.scrape_list_page
+    PopularRecipes::Recipe.create(new_attributes)
+    additional_attr = scraper.
+    self.all.each do |recipe|
+      recipe.add_attributes(additional_attr)
+    end
+  end
+
   def list_recipes(list_input)
     puts
     puts
     puts
+    recipes = PopularRecipes::Recipe.all
     case list_input
     when "1-10"
       puts "----------------------Recipes 1-10---------------------------"
