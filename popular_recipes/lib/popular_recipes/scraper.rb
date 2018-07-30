@@ -6,13 +6,13 @@ class PopularRecipes::RecipeScraper
   end
 
   def scrape_list_page
-    doc = get_page("https://www.foodnetwork.com/recipes/photos/foodnetwork-top-50-most-saved-recipes")
-    list_element = doc.css('section.o-PhotoGalleryPromo__m-AssetData.m-AssetData.asset-info')
+    doc = get_page("http://www.geniuskitchen.com/ideas/all-time-favorite-recipes-6365?c=24106")
+    index_card = doc.css('div.smart-info div.smart-info-wrap')
     recipes = []
-    list_element.each do |card|
+    index_card.each do |card|
       recipes << {
-        :name => card.css('h3 span').text.gsub(/No\.\s[0-9]*:\s/, ""),
-        :url => card.css('p a').attribute('href').value.gsub(/\A/, "https:")
+        :name => card.css('h2.title a').text.gsub(/#[0-9]*:\s/, ""),
+        :url => card.css('h2.title a').attribute('href').value
       }
     end
     recipes

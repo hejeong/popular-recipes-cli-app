@@ -3,9 +3,9 @@ class PopularRecipes::CLI
     create_recipes
     puts
     puts
-    puts "Welcome to Top 50 Popular Recipes!"
+    puts "Welcome to 25 Popular Recipes!"
     puts "The recipes will be listed 10 at a time, and you'll be given the option to learn more about the recipe."
-    puts "Which recipes would you like to see? (1-10) (11-20) (21-30) (31-40) (41-50)"
+    puts "Which recipes would you like to see? (1-5) (6-10) (11-15) (16-20) (21-25)"
     list_input = gets.strip
     list_recipes(list_input)
     input = nil
