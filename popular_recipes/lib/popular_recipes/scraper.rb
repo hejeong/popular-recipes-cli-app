@@ -19,21 +19,29 @@ class PopularRecipes::RecipeScraper
   end
 
   def scrape_recipe_page(url)
-    doc = get_page("http://www.geniuskitchen.com/recipe/creamy-burrito-casserole-33919")
+    doc = get_page(url)
     ingredients = []
     ingredient_wrapper = doc.css('ul.ingredient-list li')
     ingredient_wrapper.each do |element|
-      quantity = ingredient_wrapper.css('span.qty').first.text
-      food = ingredient_wrapper.css('span.food').first.text
-      text = quantity + food
+      quantity = element.css('span.qty').text
+      food = element.css('span.food').text
+      text = quantity.ljust(7) + food.strip
       ingredients << text
     end
+
+    directions = []
+    directions_wrapper = doc.css('div.directions-inner.container-xs ol li')
+    directions_wrapper.each do |element|
+      directions << element.text
+    end
+    directions.pop
     {
       :author => doc.css('div.rating-and-author h6.byline a').first.text,
       :total_time => doc.css('table.recipe-facts.servings_unit tbody tr td.time').text.gsub(/\n/,"").gsub(/\s/,"").gsub(/READYIN:/,""),
       :yield => doc.css('td.servings a span').text,
       :rating => doc.css('div.five-star span.sr-only').text,
-      :ingredients => ingredients
+      :ingredients => ingredients,
+      :directions => directions
     }
   end
 end

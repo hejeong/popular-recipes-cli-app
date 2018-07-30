@@ -1,6 +1,6 @@
 class PopularRecipes::Recipe
   @@all = []
-  attr_accessor :name, :url, :total_time, :yield, :author, :rating, :ingredients
+  attr_accessor :name, :url, :total_time, :yield, :author, :rating, :ingredients, :directions
   def initialize(attribute_hash)
     attribute_hash.each do |attribute, value|
       self.send("#{attribute}=", value)
