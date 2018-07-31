@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-require '../lib/popular_recipes'
+require '../config/environment.rb'
 
 PopularRecipes::CLI.new.call
