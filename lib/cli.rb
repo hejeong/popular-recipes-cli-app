@@ -88,7 +88,7 @@ class PopularRecipes::CLI
     puts
     puts
     puts "Welcome to 25 Popular Recipes!"
-    puts "The recipes will be listed 10 at a time, and you'll be given the option to learn more about the recipe."
+    puts "The recipes will be listed 5 at a time, and you'll be given the option to learn more about the recipe."
     puts "Which recipes would you like to see? (1-5) (6-10) (11-15) (16-20) (21-25)"
   end
 end
