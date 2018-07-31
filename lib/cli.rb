@@ -20,9 +20,13 @@ class PopularRecipes::CLI
 
   # create recipe instances and all necessary attributes
   def create_recipes
+    # new scraper instance
     scraper = PopularRecipes::RecipeScraper.new
+    # grab name and url attributes
     new_attributes = scraper.scrape_list_page
+    # create new instances of recipes and save them
     PopularRecipes::Recipe.create(new_attributes)
+    # use the urls of each instance and scrape all the other information and update the attributes
     PopularRecipes::Recipe.all.each do |recipe|
       additional_attr = scraper.scrape_recipe_page(recipe.url)
       recipe.add_attributes(additional_attr)

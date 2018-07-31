@@ -1,5 +1,5 @@
 # PopularRecipes
-
+A command line interface gem that lists 25 popular recipes from Genius Kitchen. Be able to view each item in list form by name, and see all the details of an individual recipe.
 
 ## Installation
 
@@ -29,7 +29,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/'hejeong'/popular_recipes. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/hejeong/popular-recipes-cli-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -37,4 +37,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the PopularRecipes project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'hejeong'/popular_recipes/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the PopularRecipes project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hejeong/popular-recipes-cli-app/blob/master/CODE_OF_CONDUCT.md).
