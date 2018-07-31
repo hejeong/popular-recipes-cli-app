@@ -15,7 +15,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install popular-recipes-cli-app
+    $ gem install popular-recipes
 
 ## Usage
 
