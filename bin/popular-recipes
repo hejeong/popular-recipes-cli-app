@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-require '../config/environment.rb'
+require_relative 'config/environment'
 
 PopularRecipes::CLI.new.call

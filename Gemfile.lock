@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    popular_recipes (0.1.0)
+    popular-recipes (0.1.1)
       nokogiri
 
 GEM
@@ -22,7 +22,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  popular_recipes!
+  popular-recipes!
   pry
   rake (~> 10.0)
 
