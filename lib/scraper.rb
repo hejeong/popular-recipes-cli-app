@@ -2,12 +2,12 @@ require 'pry'
 class PopularRecipes::RecipeScraper
 
   # returns HTML in nested nodes
-  def get_page(url)
+  def self.get_page(url)
     Nokogiri::HTML(open(url))
   end
 
   # scrapes from index page
-  def scrape_list_page
+  def self.scrape_list_page
     doc = get_page("http://www.geniuskitchen.com/ideas/all-time-favorite-recipes-6365?c=24106")
     index_card = doc.css('div.smart-info div.smart-info-wrap')
     recipes = []
@@ -21,7 +21,7 @@ class PopularRecipes::RecipeScraper
   end
 
   # scrapes from recipe page
-  def scrape_recipe_page(url)
+  def self.scrape_recipe_page(url)
     doc = get_page(url)
 
     # fetch ingredients into proper formatting and add into array
