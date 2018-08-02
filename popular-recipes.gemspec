@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   end
   spec.bindir        = "bin"
   spec.executables   = "popular-recipes"
-  spec.require_paths = ["lib"]
+  spec.require_paths = ["lib","config"]
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
